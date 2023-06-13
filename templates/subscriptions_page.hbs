@@ -1,0 +1,98 @@
+<div class="theme-container">
+  <div class="theme-breadcrumbs">
+    <ol class="breadcrumbs">
+      <li title="{{help_center.name}}">
+        <a href="/hc/{{help_center.locale}}">{{help_center.name}}</a>
+      </li>
+    </ol>
+  </div>
+
+  <h2 class="theme-heading">
+    {{help_center.name}}
+  </h2>
+</div>
+
+<div class="theme-container">
+  <div class="theme-box">
+
+    <div class="welcome welcome--min">
+      <h1 class="welcome__title">
+        {{#if settings.translations_enable}}
+          {{dc settings.welcome_title}}
+        {{else}}
+          {{settings.welcome_title}}
+        {{/if}}
+      </h1>
+      <div class="welcome__search">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M7 10C8.65685 10 10 8.65685 10 7C10 5.34315 8.65685 4 7 4C5.34315 4 4 5.34315 4 7C4 8.65685 5.34315 10 7 10ZM12 7C12 9.76142 9.76142 12 7 12C4.23858 12 2 9.76142 2 7C2 4.23858 4.23858 2 7 2C9.76142 2 12 4.23858 12 7Z" fill="#4D4D4D"/>
+          <path d="M9.10344 9.20564C9.49396 8.81512 10.1271 8.81512 10.5177 9.20564L15.0326 13.7205C15.4231 14.1111 15.4231 14.7442 15.0326 15.1348C14.642 15.5253 14.0089 15.5253 13.6183 15.1348L9.10344 10.6199C8.71292 10.2293 8.71292 9.59617 9.10344 9.20564Z" fill="#4D4D4D"/>
+        </svg>
+        {{#if settings.translations_enable}}
+          {{search instant=true placeholder=(dc settings.search_placeholder)}}
+        {{else}}
+          {{search instant=true placeholder=settings.search_placeholder}}
+        {{/if}}
+      </div>
+    </div>
+
+    <div class="page">
+
+      <div class="page__sidebar">
+        <div data-plugin-section-list>
+          <script class="template" type="application/x-ejs">
+            <ul class="section-list">
+              <% for (var i = 0; i < sections.length; i++) { %>
+                <li class="section-list__item <%= (sections[i].id === activeSection ? 'is-active' : '') %>">
+                  <a href="<%= sections[i].html_url %>"><%= sections[i].name %></a>
+                </li>
+              <% } %>
+            </ul>
+          </script>
+        </div>
+      </div>
+
+      <div class="page__body">
+
+        <div class="page__heading">
+          <h1 class="page__title">{{t 'my_activities' }}</h1>
+        </div>
+
+        <ul class="my-activities-menu">
+          {{#if help_center.request_management_enabled}}
+            <li class="my-activities-menu__item">{{link 'requests'}}</li>
+          {{/if}}
+          <li class="my-activities-menu__item">{{link 'contributions'}}</li>
+          <li class="my-activities-menu__item is-active">{{t 'following'}}</li>
+        </ul>
+
+        {{!-- Content --}}
+        {{#if subscriptions}}
+          <table class="my-activities">
+            <thead>
+            <tr>
+              <td>{{t 'title'}}</td>
+              <td class="my-activities__is-hidden">{{t 'type'}}</td>
+              <td class="my-activities__is-hidden">{{t 'subscription'}}</td>
+              <td class="my-activities__is-hidden"></td>
+            </tr>
+            </thead>
+            <tbody>
+            {{#each subscriptions}}
+              <tr>
+                <td><a href="{{url}}">{{excerpt title characters=60}}</a></td>
+                <td class="meta my-activities__is-hidden">{{name}}</td>
+                <td class="meta my-activities__is-hidden">{{following}}</td>
+                <td class="my-activities__btn my-activities__is-hidden">{{subscribe}}</td>
+              </tr>
+            {{/each}}
+            </tbody>
+          </table>
+          {{pagination}}
+        {{else}}
+          <p>{{t 'not_following'}}</p>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</div>

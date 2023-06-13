@@ -1,0 +1,355 @@
+.custom-footer *, .custom-footer :after, .custom-footer :before {
+  box-sizing: border-box;
+  border: 0 solid;
+}
+
+.custom-footer {
+  position: relative;
+  background-color: #FFDD00;
+  margin-top: 28px;
+}
+
+@media (max-width: 767px) {
+  .custom-footer {
+    background: linear-gradient(98deg, rgba(255, 221, 0, 1) 0%, rgba(255, 221, 0, 1) 50%, rgba(255, 227, 42, 1) 50%, rgba(255, 227, 42, 1) 100%);
+  }
+}
+
+.custom-footer :after, .custom-footer :before {
+  --tw-content: "";
+}
+
+.custom-footer a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.custom-footer button {
+  font-family: inherit;
+  font-size: 100%;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.custom-footer button {
+  text-transform: none;
+}
+
+.custom-footer button {
+  -webkit-appearance: button;
+  background-color: transparent;
+  background-image: none;
+}
+
+.custom-footer :-moz-focusring {
+  outline: auto;
+}
+
+.custom-footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.custom-footer button {
+  cursor: pointer;
+}
+
+.custom-footer :disabled {
+  cursor: default;
+}
+
+.custom-footer svg {
+  display: block;
+  vertical-align: middle;
+}
+
+.custom-footer *, .custom-footer :after, .custom-footer :before {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgba(59, 130, 246, .5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+}
+
+@media (min-width: 640px) {
+  .custom-footer .sm\:w-1\/2 {
+    width: 50% !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .custom-footer .lg\:w-1\/4 {
+    width: 25% !important;
+  }
+  .custom-footer .lg\:w-1\/2 {
+    width: 50% !important;
+  }
+  .custom-footer .lg\:w-3\/4 {
+    width: 75% !important;
+  }
+}
+
+.custom-footer .-mx-2 {
+  margin-left: -8px !important;
+  margin-right: -8px !important;
+}
+
+.custom-footer .mb-10 {
+  margin-bottom: 2.5rem !important;
+}
+
+.custom-footer .mb-4 {
+  margin-bottom: 16px !important;
+}
+
+.custom-footer .mb-6 {
+  margin-bottom: 24px !important;
+}
+
+.custom-footer .mb-2 {
+  margin-bottom: 8px !important;
+}
+
+.custom-footer .mr-2 {
+  margin-right: 8px !important;
+}
+
+.custom-footer .inline-block {
+  display: inline-block !important;
+}
+
+.custom-footer .flex {
+  display: flex !important;
+}
+
+.custom-footer .h-full {
+  height: 100% !important;
+}
+
+.custom-footer .w-full {
+  width: 100% !important;
+}
+
+.custom-footer .cursor-pointer {
+  cursor: pointer !important;
+}
+
+.custom-footer .flex-col {
+  flex-direction: column !important;
+}
+
+.custom-footer .flex-wrap {
+  flex-wrap: wrap !important;
+}
+
+.custom-footer .justify-end {
+  justify-content: flex-end !important;
+}
+
+.custom-footer .justify-between {
+  justify-content: space-between !important;
+}
+
+.custom-footer .overflow-hidden {
+  overflow: hidden !important;
+}
+
+.custom-footer .rounded-md {
+  border-radius: 0.375rem !important;
+}
+
+.custom-footer .bg-neutral-100 {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(255 255 255/var(--tw-bg-opacity)) !important;
+}
+
+.custom-footer .p-4 {
+  padding: 16px !important;
+}
+
+.custom-footer .px-2 {
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+}
+
+.custom-footer .pt-3 {
+  padding-top: 12px !important;
+}
+
+.custom-footer .pr-0 {
+  padding-right: 0 !important;
+}
+
+.custom-footer .text-base {
+  font-size: 1rem !important;
+  line-height: 1.5rem !important;
+}
+
+.custom-footer .text-sm {
+  font-size: 0.875rem !important;
+  line-height: 1.25rem !important;
+}
+
+.custom-footer .font-bold {
+  font-weight: 700 !important;
+}
+
+.custom-footer .font-medium {
+  font-weight: 500 !important;
+}
+
+.custom-footer .font-light {
+  font-weight: 300 !important;
+}
+
+.custom-footer .transition-colors {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke !important;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transition-duration: 0.15s !important;
+}
+
+.custom-footer .duration-300 {
+  transition-duration: 0.3s !important;
+}
+
+.custom-footer .js-focus-visible :focus:not(.focus-visible) {
+  outline: none;
+}
+
+.custom-footer :focus {
+  box-shadow: 0 0 0 2px #517af5 !important;
+  outline: none !important;
+  border-radius: 0;
+}
+
+.custom-footer :focus:focus:not(:focus-visible) {
+  box-shadow: none !important;
+  outline: none;
+}
+
+.custom-footer :focus:focus:not(:focus-within) {
+  box-shadow: none !important;
+  outline: none;
+}
+
+.custom-footer button {
+  margin: 0;
+  font-family: Flanders Art Sans, Open Sans, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media print {
+  .custom-footer #footer, .custom-footer .cursor-pointer {
+    display: none !important;
+  }
+}
+
+.custom-footer .hover\:bg-primary-200:hover {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(255 243 183/var(--tw-bg-opacity)) !important;
+}
+
+@media (min-width: 640px) {
+  .custom-footer .sm\:w-1\/2 {
+    width: 50% !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .custom-footer .lg\:w-1\/4 {
+    width: 25% !important;
+  }
+  .custom-footer .lg\:w-1\/2 {
+    width: 50% !important;
+  }
+  .custom-footer .lg\:w-3\/4 {
+    width: 75% !important;
+  }
+}
+
+.custom-footer .css-1mrdp1z {
+  font-family: "Flanders Art Sans";
+  color: #2b3034;
+  margin: 0px;
+}
+
+.custom-footer .css-1lqpvhj {
+  font-family: "Flanders Art Sans";
+  color: #666666;
+  margin: 0px;
+}
+
+.custom-footer .css-1pcx78y {
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  width: 100%;
+}
+
+@media print {
+  .custom-footer .css-1pcx78y {
+    display: none;
+  }
+}
+
+.custom-footer .css-vb3flr {
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+  justify-content: center;
+  max-width: 1440px;
+  padding: 40px 16px 24px;
+}
+
+@media (max-width: 1024px) {
+  .custom-footer .css-vb3flr {
+    padding: 16px;
+  }
+}
+
+.custom-footer .css-yp9swi {
+  flex: 1 1 0%;
+}
+
+.custom-footer .css-176vvg6 li {
+  padding: 0px 0px 8px;
+  font-size: 0.875rem;
+  line-height: 20px;
+}
+
+.custom-footer .css-nn5ldd {
+  font-family: "Flanders Art Sans";
+  color: #4d4d4d;
+  margin: 0px;
+}
+
+.custom-footer .css-1c5fhas {
+  background-image: url(https://www.delijn.be/assets/images/vlaamseleeuw.png);
+  height: 26px;
+  width: 18px;
+}
+
+@media (max-width: 767px) {
+  .footer-btn {
+    width: 100%;
+  }
+}

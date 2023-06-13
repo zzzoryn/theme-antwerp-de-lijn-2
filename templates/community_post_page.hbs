@@ -1,0 +1,189 @@
+<div class="theme-container">
+  <div class="theme-breadcrumbs">
+    {{breadcrumbs}}
+  </div>
+
+  <h2 class="theme-heading">
+    {{help_center.name}}
+  </h2>
+</div>
+
+<div class="theme-container">
+  <div class="theme-box">
+
+    <div class="welcome welcome--min">
+      <h1 class="welcome__title">
+        {{#if settings.translations_enable}}
+          {{dc settings.welcome_title}}
+        {{else}}
+          {{settings.welcome_title}}
+        {{/if}}
+      </h1>
+      <div class="welcome__search">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M7 10C8.65685 10 10 8.65685 10 7C10 5.34315 8.65685 4 7 4C5.34315 4 4 5.34315 4 7C4 8.65685 5.34315 10 7 10ZM12 7C12 9.76142 9.76142 12 7 12C4.23858 12 2 9.76142 2 7C2 4.23858 4.23858 2 7 2C9.76142 2 12 4.23858 12 7Z" fill="#4D4D4D"/>
+          <path d="M9.10344 9.20564C9.49396 8.81512 10.1271 8.81512 10.5177 9.20564L15.0326 13.7205C15.4231 14.1111 15.4231 14.7442 15.0326 15.1348C14.642 15.5253 14.0089 15.5253 13.6183 15.1348L9.10344 10.6199C8.71292 10.2293 8.71292 9.59617 9.10344 9.20564Z" fill="#4D4D4D"/>
+        </svg>
+        {{#if settings.translations_enable}}
+          {{search instant=true placeholder=(dc settings.search_placeholder)}}
+        {{else}}
+          {{search instant=true placeholder=settings.search_placeholder}}
+        {{/if}}
+      </div>
+    </div>
+
+    <div class="page">
+      <div class="page__sidebar">
+        <div data-plugin-section-list>
+          <script class="template" type="application/x-ejs">
+            <ul class="section-list">
+              <% for (var i = 0; i < sections.length; i++) { %>
+                <li class="section-list__item <%= (sections[i].id === activeSection ? 'is-active' : '') %>">
+                  <a href="<%= sections[i].html_url %>"><%= sections[i].name %></a>
+                </li>
+              <% } %>
+            </ul>
+          </script>
+        </div>
+      </div>
+
+      <div class="page__body">
+        <div class="page__heading">
+          <h1 class="page__title">
+            {{post.title}}
+
+            {{#is post.status 'none'}}
+            {{else}}
+              <span class="post-status post-status--{{post.status_dasherized}}">({{post.status_name}})</span>
+            {{/is}}
+          </h1>
+          {{#if settings.show_date}}
+            <div class="page__description">
+              {{t 'created'}} {{date post.created_at}}
+            </div>
+          {{/if}}
+        </div>
+
+        <div class="article-body article-content markdown" itemprop="articleBody" data-article-body data-plugin-formatting>
+          {{post.details}}
+        </div>
+
+        {{#if settings.show_community_post_sharing}}
+          <div class="share-container">
+            <span>{{t 'share'}}:</span>
+            {{share}}
+          </div>
+        {{/if}}
+
+        {{#if settings.show_community_post_vote}}
+          {{#with post}}
+            <div class="article-vote">
+              <div class="article-vote__title">{{dc 'ui-does_this_answer_your_question'}}</div>
+              <div class="article-vote__controls">
+                {{#vote 'up' class='vote-btn vote-btn--up' selected_class='is-active' role='button'}}
+                  <img src="{{asset 'icon-vote-up.svg'}}" alt="">
+                {{/vote}}
+                {{#vote 'down' class='vote-btn vote-btn--down' selected_class='is-active' role='button'}}
+                  <img src="{{asset 'icon-vote-down.svg'}}" alt="">
+                {{/vote}}
+              </div>
+            </div>
+          {{/with}}
+        {{/if}}
+
+        {{!-- Post comments --}}
+        <section class="section comments">
+          <div class="comments__heading">
+            <h2 class="comments__title">
+              {{t 'comments'}}
+              <span class="meta">({{t 'comments_count' count=post.comment_count}})</span>
+            </h2>
+
+            {{#if comments}}
+              <div class="dropdown" data-plugin-dropdown>
+                <a class="js-dropdown-open btn btn--secondary btn--md" tabindex="0" role="button" aria-label="Open">
+                  {{t 'sort_by'}}
+                </a>
+                <div class="dropdown__content dropdown__content--xs js-dropdown" role="menu" aria-hidden="true">
+                  {{#each comment_sorters}}
+                    <a class="dropdown__menuitem" aria-selected="{{selected}}" href="{{url}}" rel="nofollow" role="menuitem">{{name}}</a>
+                  {{/each}}
+                </div>
+              </div>
+            {{/if}}
+          </div>
+
+          <div class="comments__container">
+            {{#if comments}}
+              <div class="comments__list" id="comments">
+                {{#each comments}}
+                  <div class="comment" id="{{anchor}}">
+                    <div class="comment__left">
+                      <div class="comment__heading">
+                        {{#is ../settings.author_type 'avatar'}}
+                          <img class="user-avatar user-avatar--default" src="{{author.avatar_url}}" alt="Avatar">
+                        {{/is}}
+                        <div>
+                          {{#isnt ../settings.author_type 'none'}}
+                            {{#link 'user_profile' id=author.id}}
+                              {{author.name}}
+                            {{/link}}
+                          {{/isnt}}
+                          <div class="meta">
+                            {{#if ../settings.show_date}}
+                              {{date created_at}}
+                            {{/if}}
+                            {{#if editor}}
+                              ({{t 'edited'}} {{date edited_at timeago=true}})
+                            {{/if}}
+                          </div>
+                        </div>
+                      </div>
+                      <div class="comment__body">
+                        {{body}}
+                      </div>
+                    </div>
+                    <div class="comment__sidebar">
+                      {{#unless official}}
+                        <div class="vote vote--comment">
+                          {{#vote 'up' class='btn btn--light btn--sm btn--circle' role='button' selected_class='is-active'}}
+                            <span class="fas fa-angle-up"></span>
+                          {{/vote}}
+                          <div class="meta">
+                            {{vote 'sum'}}
+                          </div>
+                          {{#vote 'down' class='btn btn--light btn--sm btn--circle' role='button' selected_class='is-active'}}
+                            <span class="fas fa-angle-down"></span>
+                          {{/vote}}
+                        </div>
+                      {{/unless}}
+                      <div class="comment__actions">
+                        {{#actions}}
+                          <span class="fas fa-cog"></span>
+                        {{/actions}}
+                      </div>
+                    </div>
+                  </div>
+                {{/each}}
+              </div>
+              {{pagination}}
+            {{/if}}
+
+            <p class="comments__callout">{{comment_callout}}</p>
+
+            {{#form 'comment' class='comment-form'}}
+              <div class="comment-form__body">
+                {{wysiwyg 'body'}}
+              </div>
+              <div class="comment-form__controls">
+                {{input type='submit' class='btn btn--primary'}}
+              </div>
+            {{/form}}
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+</div>
+

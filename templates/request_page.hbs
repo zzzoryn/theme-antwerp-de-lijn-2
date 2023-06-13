@@ -1,0 +1,200 @@
+<div class="theme-container">
+  <div class="theme-breadcrumbs">
+    {{breadcrumbs}}
+  </div>
+
+  <h2 class="theme-heading">
+    {{help_center.name}}
+  </h2>
+</div>
+
+<div class="theme-container">
+  <div class="theme-box">
+
+    <div class="welcome welcome--min">
+      <h1 class="welcome__title">
+        {{#if settings.translations_enable}}
+          {{dc settings.welcome_title}}
+        {{else}}
+          {{settings.welcome_title}}
+        {{/if}}
+      </h1>
+      <div class="welcome__search">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M7 10C8.65685 10 10 8.65685 10 7C10 5.34315 8.65685 4 7 4C5.34315 4 4 5.34315 4 7C4 8.65685 5.34315 10 7 10ZM12 7C12 9.76142 9.76142 12 7 12C4.23858 12 2 9.76142 2 7C2 4.23858 4.23858 2 7 2C9.76142 2 12 4.23858 12 7Z" fill="#4D4D4D"/>
+          <path d="M9.10344 9.20564C9.49396 8.81512 10.1271 8.81512 10.5177 9.20564L15.0326 13.7205C15.4231 14.1111 15.4231 14.7442 15.0326 15.1348C14.642 15.5253 14.0089 15.5253 13.6183 15.1348L9.10344 10.6199C8.71292 10.2293 8.71292 9.59617 9.10344 9.20564Z" fill="#4D4D4D"/>
+        </svg>
+        {{#if settings.translations_enable}}
+          {{search instant=true placeholder=(dc settings.search_placeholder)}}
+        {{else}}
+          {{search instant=true placeholder=settings.search_placeholder}}
+        {{/if}}
+      </div>
+    </div>
+
+    <div class="page">
+
+      <div class="page__sidebar page__sidebar--lg">
+        <p><b>{{t 'submitted_by' requester_name=request.requester.name}}</b></p>
+
+        <dl class="request-details">
+
+
+          <dt>{{t 'organization'}}</dt>
+          <dd>
+            {{#form 'organization' id='request-organization'}}
+              {{select 'organization'}}
+            {{/form}}
+          </dd>
+
+
+          {{#if group}}
+            <dt>{{t 'group'}}</dt>
+            <dd>
+              <span>{{group.name}}</span>
+            </dd>
+          {{/if}}
+
+          <dt>{{t 'status'}}</dt>
+          <dd>
+        <span class="request-status request-status--{{request.status}}" title="{{request.status_description}}">
+          {{request.status_name}}
+        </span>
+          </dd>
+
+          {{#if request.type}}
+            <dt>{{t 'type'}}</dt>
+            <dd>
+          <span>
+            {{request.type_name}}
+            {{#is request.type 'task'}}{{t 'task_due_date' due_date=request.due_date}}{{/is}}
+          </span>
+            </dd>
+          {{/if}}
+
+          {{#if request.priority}}
+            <dt>{{t 'priority'}}</dt>
+            <dd>
+              <span>{{request.priority_name}}</span>
+            </dd>
+          {{/if}}
+
+          {{#if assignee}}
+            <dt>{{t 'assignee'}}</dt>
+            <dd>
+              <span>{{assignee.name}}</span>
+            </dd>
+          {{/if}}
+
+          {{#each custom_fields}}
+            <dt>{{title}}</dt>
+            <dd>
+              <span>{{value}}</span>
+            </dd>
+          {{/each}}
+
+          {{#if attachments}}
+            <ul class="list-unstyled attachment-list">
+              {{#each attachments}}
+                <li class="attachment-list__item">
+                  <i class="fas fa-file"></i>
+                  <a href="{{url}}" target="_blank" class="link-primary">{{name}}</a>
+                  <div class="meta">({{size}})</div>
+                </li>
+              {{/each}}
+            </ul>
+          {{/if}}
+
+          {{#if collaborators}}
+            <dt>{{t 'ccs'}}</dt>
+            <dd>
+              <span>{{t 'ccs_description'}}</span>
+              <ul class="list-unstyled">
+                {{#each collaborators}}
+                  <li>{{name}}</li>
+                {{/each}}
+              </ul>
+            </dd>
+          {{/if}}
+        </dl>
+        <p>
+          {{link 'new_request' class='btn btn--primary' role='button'}}
+        </p>
+      </div>
+
+      <div class="page__body">
+
+        <div class="page__heading">
+          <h1 class="page__title">{{request.subject}}</h1>
+          {{satisfaction}}
+          <div class="page__description">{{t 'request' request_number=request.id}}</div>
+        </div>
+
+        {{!-- Content --}}
+        <section class="comments__container">
+          <div class="comments__list comments__list--content" id="comments">
+            {{#each comments}}
+              <div class="comment" id="{{anchor}}">
+                <div class="comment__left">
+                  <div class="comment__heading">
+                    <img class="user-avatar user-avatar--default" src="{{author.avatar_url}}" alt="Avatar">
+                    <div>
+                      {{#link 'user_profile' id=author.id}}
+                        {{author.name}}
+                      {{/link}}
+                      <div class="meta">
+                        {{date created_at}}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="comment__body">
+                    {{body}}
+                  </div>
+                  {{#if attachments}}
+                    <ul class="attachment-list">
+                      {{#each attachments}}
+                        <li class="attachment-list__item">
+                          <i class="fas fa-file"></i>
+                          <a href="{{url}}" target="_blank" class="link-primary">{{name}}</a>
+                          <div class="meta">({{size}})</div>
+                        </li>
+                      {{/each}}
+                    </ul>
+                  {{/if}}
+                </div>
+              </div>
+            {{/each}}
+
+            {{pagination}}
+
+          </div>
+
+          <p class="comments__callout">{{comment_callout}}</p>
+
+          {{#form 'comment' class='comment-form'}}
+            <div class="comment-form__body">
+              {{#if help_center.request_ccs_enabled}}
+                <div class="comment-form__ccs">
+                  {{token_field 'ccs'}}
+                </div>
+              {{/if}}
+              {{textarea 'body' rows='4'}}
+            </div>
+            <div class="comment-form__attachments">
+              {{upload}}
+            </div>
+            <div class="comment-form__controls">
+              <div class="comment-form__mark-as-solved">
+                {{checkbox 'mark_as_solved'}}
+                {{label 'mark_as_solved'}}
+              </div>
+              {{input type='submit' class='btn btn--primary'}}
+            </div>
+          {{/form}}
+
+        </section>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,161 @@
+<div class="theme-container">
+  <div class="theme-breadcrumbs">
+    {{breadcrumbs}}
+  </div>
+
+  <h2 class="theme-heading">
+    {{help_center.name}}
+  </h2>
+</div>
+
+<div class="theme-container">
+  <div class="theme-box">
+
+    <div class="welcome welcome--min">
+      <h1 class="welcome__title">
+        {{#if settings.translations_enable}}
+          {{dc settings.welcome_title}}
+        {{else}}
+          {{settings.welcome_title}}
+        {{/if}}
+      </h1>
+      <div class="welcome__search">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M7 10C8.65685 10 10 8.65685 10 7C10 5.34315 8.65685 4 7 4C5.34315 4 4 5.34315 4 7C4 8.65685 5.34315 10 7 10ZM12 7C12 9.76142 9.76142 12 7 12C4.23858 12 2 9.76142 2 7C2 4.23858 4.23858 2 7 2C9.76142 2 12 4.23858 12 7Z" fill="#4D4D4D"/>
+          <path d="M9.10344 9.20564C9.49396 8.81512 10.1271 8.81512 10.5177 9.20564L15.0326 13.7205C15.4231 14.1111 15.4231 14.7442 15.0326 15.1348C14.642 15.5253 14.0089 15.5253 13.6183 15.1348L9.10344 10.6199C8.71292 10.2293 8.71292 9.59617 9.10344 9.20564Z" fill="#4D4D4D"/>
+        </svg>
+        {{#if settings.translations_enable}}
+          {{search instant=true placeholder=(dc settings.search_placeholder)}}
+        {{else}}
+          {{search instant=true placeholder=settings.search_placeholder}}
+        {{/if}}
+      </div>
+    </div>
+
+    <div class="page">
+
+      <div class="page__sidebar">
+        <div data-plugin-section-list>
+          <script class="template" type="application/x-ejs">
+            <ul class="section-list">
+              <% for (var i = 0; i < sections.length; i++) { %>
+                <li class="section-list__item <%= (sections[i].id === activeSection ? 'is-active' : '') %>">
+                  <a href="<%= sections[i].html_url %>"><%= sections[i].name %></a>
+                </li>
+              <% } %>
+            </ul>
+          </script>
+        </div>
+      </div>
+
+      <div class="page__body">
+
+        <div class="page__heading">
+          <h1 class="page__title">
+            {{topic.name}}
+            {{#if topic.internal}}
+              <span class="meta">{{t 'internal'}}</span>
+            {{/if}}
+          </h1>
+          {{#if topic.description}}
+            <div class="page__description">{{topic.description}}</div>
+          {{/if}}
+        </div>
+
+        <ul class="my-activities-menu">
+          <li class="my-activities-menu__item">{{link 'topics'}}</li>
+          <li class="my-activities-menu__item is-active">{{t 'posts'}}</li>
+          <li class="my-activities-menu__item">{{link 'new_post'}}</li>
+        </ul>
+
+        {{!-- Filters --}}
+        <div class="topic-controls">
+
+          <div class="dropdown" data-plugin-dropdown>
+            <a class="btn btn--light btn--md js-dropdown-open" tabindex="0" role="button" aria-label="Open">
+              {{current_filter.label}}
+            </a>
+            <div class="dropdown__content js-dropdown" role="menu" aria-hidden="true">
+              {{#each filters}}
+                <a href="{{url}}" class="dropdown__menuitem" rel="nofollow" role="menuitem" aria-selected="{{selected}}">
+                  {{name}}
+                </a>
+              {{/each}}
+            </div>
+          </div>
+
+          <div class="dropdown" data-plugin-dropdown>
+            <a class="btn btn--light btn--md js-dropdown-open" tabindex="0" role="button" aria-label="Open">
+              {{current_sorter.label}}
+            </a>
+            <div class="dropdown__content js-dropdown" role="menu" aria-hidden="true">
+              {{#each sorters}}
+                <a href="{{url}}" class="dropdown__menuitem" rel="nofollow" role="menuitem" aria-selected="{{selected}}">
+                  {{name}}
+                </a>
+              {{/each}}
+            </div>
+          </div>
+
+        </div>
+
+        {{!-- Posts --}}
+        {{#if posts}}
+          <div class="comments__list comments__list--content">
+            {{#each posts}}
+              <div class="comment">
+                <div class="comment__left">
+
+                  <div class="comment__heading">
+                    {{#is ../settings.author_type 'avatar'}}
+                      <img class="user-avatar user-avatar--default" src="{{author.avatar_url}}" alt="Avatar">
+                    {{/is}}
+                    <div>
+                      {{#isnt ../settings.author_type 'none'}}
+                        {{#link 'user_profile' id=author.id}}
+                          {{author.name}}
+                        {{/link}}
+                      {{/isnt}}
+                      <div class="meta">
+                        {{#if ../settings.show_date}}
+                          {{date created_at}}
+                        {{/if}}
+                        {{#if editor}}
+                          ({{t 'edited'}} {{date edited_at timeago=true}})
+                        {{/if}}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="comment__body">
+                    <h3>
+                      {{#if pinned}}<span class="fa fa-star"></span>{{/if}}
+                      <a href="{{url}}">{{title}}</a>
+                    </h3>
+                    <div class="meta">
+
+                      {{#is status 'none'}}
+                      {{else}}
+                        <span class="post-status post-status--{{status_dasherized}}">
+                          {{status_name}}
+                        </span>
+                      {{/is}}
+
+                      {{vote_sum}} {{t 'vote' count=vote_sum}}
+                      | {{comment_count}} {{t 'comment' count=comment_count}}
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            {{/each}}
+          </div>
+
+          {{pagination}}
+        {{else}}
+          <p>{{t 'no_content'}}</p>
+        {{/if}}
+
+      </div>
+    </div>
+  </div>
+</div>

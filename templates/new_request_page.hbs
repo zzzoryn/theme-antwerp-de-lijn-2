@@ -1,0 +1,45 @@
+<style>
+  .footer-top {
+    display: none;
+  }
+</style>
+
+<div class="theme-container">
+  <div class="theme-breadcrumbs">
+    {{breadcrumbs}}
+  </div>
+
+  <h2 class="theme-heading">
+    {{help_center.name}}
+  </h2>
+</div>
+
+<div class="theme-container">
+  <div class="theme-box">
+
+    <div class="page__heading">
+      <h1 class="page__title">
+        Stel ons een vraag
+      </h1>
+      <div class="page__description">
+        Kies een onderwerp en vul de velden correct in. We pikken je vraag op binnen vijf werkdagen.
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6">
+        <div id="main-content" class="form">
+          {{request_form wysiwyg=true}}
+        </div>
+      </div>
+      <div class="col-lg-6"></div>
+      <div class="col-lg-9">
+        <div class="form-footer meta">
+          We lezen, onderzoeken en behandelen elk bericht, ook als je geen antwoord wenst. We gebruiken deze gegevens
+          enkel voor de behandeling van je reactie en niet voor andere (commerciële) doeleinden, tenzij je anders
+          aangaf. <a href="#" class="link">Lees ons privacybeleid</a>.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

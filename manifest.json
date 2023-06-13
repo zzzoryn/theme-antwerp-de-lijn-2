@@ -1,0 +1,508 @@
+{
+  "name": "De Lijn",
+  "author": "Premium Plus",
+  "version": "2.0.0",
+  "api_version": 3,
+  "default_locale": "en-us",
+  "settings": [
+    {
+      "label": "Translations",
+      "variables": [
+        {
+          "identifier": "translations_enable",
+          "type": "checkbox",
+          "label": "Enable translations",
+          "description": "Enable a dynamic content instead of a static text",
+          "value": false
+        }
+      ]
+    },
+    {
+      "label": "Logo and favicon",
+      "variables": [
+        {
+          "identifier": "favicon",
+          "type": "file",
+          "description": "Company favicon",
+          "label": "Favicon"
+        },
+        {
+          "identifier": "logo",
+          "type": "file",
+          "description": "Company logo",
+          "label": "Logo"
+        },
+        {
+          "identifier": "logo_height",
+          "type": "text",
+          "description": "Height of the logo",
+          "label": "Logo height",
+          "value": "48px"
+        },
+        {
+          "identifier": "show_hc_title",
+          "type": "checkbox",
+          "label": "Help center title",
+          "description": "Show help center title",
+          "value": true
+        }
+      ]
+    },
+    {
+      "label": "Colors",
+      "variables": [
+        {
+          "identifier": "primary_color",
+          "type": "color",
+          "label": "Primary color",
+          "description": "Primary color",
+          "value": "#FFDD00"
+        },
+        {
+          "identifier": "secondary_color",
+          "type": "color",
+          "label": "Secondary color",
+          "description": "Secondary color",
+          "value": "#FFDD00"
+        },
+        {
+          "identifier": "primary_bg_color",
+          "type": "color",
+          "label": "Primary bg color",
+          "description": "Background color of your Help Center",
+          "value": "#FFFFFF"
+        },
+        {
+          "identifier": "secondary_bg_color",
+          "type": "color",
+          "label": "Secondary bg color",
+          "description": "Background color of your sections",
+          "value": "#F9F9F9"
+        },
+        {
+          "identifier": "primary_text_color",
+          "type": "color",
+          "label": "Primary text color",
+          "description": "Text color for body",
+          "value": "#2B3034"
+        },
+        {
+          "identifier": "secondary_text_color",
+          "type": "color",
+          "label": "Secondary text color",
+          "description": "Text color for subheading elements",
+          "value": "#666666"
+        },
+        {
+          "identifier": "link_color",
+          "type": "color",
+          "label": "Link color",
+          "description": "Text color for link elements",
+          "value": "#184EF1"
+        },
+        {
+          "identifier": "border_color",
+          "type": "color",
+          "label": "Border color",
+          "description": "Border color for elements",
+          "value": "#E5E5E5"
+        },
+        {
+          "identifier": "info_color",
+          "type": "color",
+          "description": "Brand info color",
+          "label": "Brand info color",
+          "value": "#5b67d3"
+        },
+        {
+          "identifier": "success_color",
+          "type": "color",
+          "description": "Brand success color",
+          "label": "Brand success color",
+          "value": "#67C30B"
+        },
+        {
+          "identifier": "warning_color",
+          "type": "color",
+          "description": "Brand warning color",
+          "label": "Brand warning color",
+          "value": "#F1D52F"
+        },
+        {
+          "identifier": "danger_color",
+          "type": "color",
+          "description": "Brand danger color",
+          "label": "Brand danger color",
+          "value": "#e64545"
+        }
+      ]
+    },
+    {
+      "label": "Fonts",
+      "variables": [
+        {
+          "identifier": "text_font_family",
+          "type": "list",
+          "description": "Font for body text",
+          "label": "Text font",
+          "value": "Flanders Art Sans, Open Sans, sans-serif",
+          "options": [
+            {
+              "label": "Default font",
+              "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif"
+            },
+            {
+              "label": "Open Sans",
+              "value": "'Open Sans', sans-serif"
+            },
+            {
+              "label": "Roboto",
+              "value": "'Roboto', sans-serif"
+            },
+            {
+              "label": "Lato",
+              "value": "'Lato', sans-serif"
+            },
+            {
+              "label": "Rubik",
+              "value": "'Rubik', sans-serif"
+            },
+            {
+              "label": "Montserrat",
+              "value": "'Montserrat', sans-serif"
+            },
+            {
+              "label": "Nunito",
+              "value": "'Nunito', sans-serif"
+            },
+            {
+              "label": "Inter",
+              "value": "'Inter', Helvetica Neue, Arial, sans-serif"
+            },
+            {
+              "label": "Roboto Slab",
+              "value": "'Roboto Slab', serif"
+            },
+            {
+              "label": "Noto serif",
+              "value": "'Noto serif', serif"
+            },
+            {
+              "label": "Lora",
+              "value": "'Lora', serif"
+            },
+            {
+              "label": "Flanders Art Sans",
+              "value": "Flanders Art Sans, Open Sans, sans-serif"
+            }
+          ]
+        },
+        {
+          "identifier": "heading_font_family",
+          "type": "list",
+          "description": "Font for headings",
+          "label": "Heading font",
+          "value": "Flanders Art Sans, Open Sans, sans-serif",
+          "options": [
+            {
+              "label": "Default font",
+              "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif"
+            },
+            {
+              "label": "Open Sans",
+              "value": "'Open Sans', sans-serif"
+            },
+            {
+              "label": "Roboto",
+              "value": "'Roboto', sans-serif"
+            },
+            {
+              "label": "Lato",
+              "value": "'Lato', sans-serif"
+            },
+            {
+              "label": "Rubik",
+              "value": "'Rubik', sans-serif"
+            },
+            {
+              "label": "Montserrat",
+              "value": "'Montserrat', sans-serif"
+            },
+            {
+              "label": "Nunito",
+              "value": "'Nunito', sans-serif"
+            },
+            {
+              "label": "Inter",
+              "value": "'Inter', Helvetica Neue, Arial, sans-serif"
+            },
+            {
+              "label": "Roboto Slab",
+              "value": "'Roboto Slab', serif"
+            },
+            {
+              "label": "Noto serif",
+              "value": "'Noto serif', serif"
+            },
+            {
+              "label": "Lora",
+              "value": "'Lora', serif"
+            },
+            {
+              "label": "Playfair Display",
+              "value": "'Playfair Display', serif"
+            },
+            {
+              "label": "Flanders Art Sans",
+              "value": "Flanders Art Sans, Open Sans, sans-serif"
+            }
+          ]
+        },
+        {
+          "identifier": "text_font_size",
+          "type": "text",
+          "description": "Body text font size",
+          "label": "Text font size",
+          "value": "16px"
+        },
+        {
+          "identifier": "heading_1_font_size",
+          "type": "text",
+          "description": "Heading 1 font size",
+          "label": "Heading 1 font size",
+          "value": "36px"
+        },
+        {
+          "identifier": "heading_2_font_size",
+          "type": "text",
+          "description": "Heading 2 font size",
+          "label": "Heading 2 font size",
+          "value": "24px"
+        },
+        {
+          "identifier": "heading_3_font_size",
+          "type": "text",
+          "description": "Heading 3 font size",
+          "label": "Heading 3 font size",
+          "value": "20px"
+        },
+        {
+          "identifier": "heading_4_font_size",
+          "type": "text",
+          "description": "Heading 4 font size",
+          "label": "Heading 4 font size",
+          "value": "18px"
+        }
+      ]
+    },
+    {
+      "label": "Style",
+      "variables": [
+        {
+          "identifier": "border_radius_base",
+          "type": "text",
+          "description": "Border radius for buttons, text field, etc.",
+          "label": "Border radius",
+          "value": "6px"
+        },
+        {
+          "identifier": "border_radius_button",
+          "type": "text",
+          "description": "Border radius for buttons, text field, etc.",
+          "label": "Button border radius",
+          "value": "6px"
+        }
+      ]
+    },
+    {
+      "label": "Header",
+      "variables": [
+        {
+          "identifier": "show_signin",
+          "type": "checkbox",
+          "label": "Show sign in button",
+          "description": "Show sign in button",
+          "value": true
+        }
+      ]
+    },
+    {
+      "label": "Welcome",
+      "variables": [
+        {
+          "identifier": "welcome_title",
+          "type": "text",
+          "label": "Welcome title",
+          "description": "Text above the search field",
+          "value": "Hoe kunnen we je helpen?"
+        },
+        {
+          "identifier": "search_placeholder",
+          "type": "text",
+          "label": "Search placeholder",
+          "description": "Search placeholder",
+          "value": "Zoek op trefwoord in vragen & contact"
+        }
+      ]
+    },
+    {
+      "label": "Category list",
+      "variables": [
+        {
+          "identifier": "show_category_list",
+          "type": "checkbox",
+          "description": "Show category list",
+          "label": "Show category list",
+          "value": true
+        },
+        {
+          "identifier": "category_list_title",
+          "type": "text",
+          "label": "Category list title",
+          "description": "Category list title",
+          "value": "Vind je antwoord in één van onze categorieën"
+        }
+      ]
+    },
+    {
+      "label": "Knowledge base",
+      "variables": [
+        {
+          "identifier": "show_date",
+          "type": "checkbox",
+          "label": "Enable dates",
+          "description": "Enable created at & edited at dates",
+          "value": true
+        },
+        {
+          "identifier": "show_article_cta",
+          "type": "checkbox",
+          "label": "Enable article CTA",
+          "description": "Enable article CTA",
+          "value": true
+        },
+        {
+          "identifier": "article_cta_title",
+          "type": "text",
+          "description": "Article CTA title",
+          "label": "Article CTA title",
+          "value": "Nog vragen over dit onderwerp?"
+        },
+        {
+          "identifier": "article_cta_subtitle",
+          "type": "text",
+          "description": "Article CTA subtitle",
+          "label": "Article CTA subtitle",
+          "value": "vul ons vragen formulier in. We helpen je spoedig verder."
+        },
+        {
+          "identifier": "article_cta_button",
+          "type": "text",
+          "description": "Article CTA button text",
+          "label": "Article CTA button text",
+          "value": "Formulier invullen"
+        },
+        {
+          "identifier": "article_cta_img",
+          "type": "file",
+          "label": "Article CTA image",
+          "description": "Article CTA image"
+        },
+        {
+          "identifier": "show_share",
+          "type": "checkbox",
+          "label": "Enable share",
+          "description": "Enable the sharing content on social media",
+          "value": false
+        },
+        {
+          "identifier": "show_vote",
+          "type": "checkbox",
+          "label": "Enable vote",
+          "description": "Enable the vote component",
+          "value": false
+        },
+        {
+          "identifier": "author_type",
+          "type": "list",
+          "label": "Enable author",
+          "description": "Enable author for content",
+          "value": "name",
+          "options": [
+            {
+              "label": "Hide author",
+              "value": "none"
+            },
+            {
+              "label": "Author name only",
+              "value": "name"
+            },
+            {
+              "label": "Author name + avatar",
+              "value": "avatar"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Community",
+      "variables": [
+        {
+          "identifier": "show_follow_community_topic",
+          "type": "checkbox",
+          "description": "Users can follow a specific topic",
+          "label": "Follow community topic",
+          "value": true
+        },
+        {
+          "identifier": "show_follow_community_post",
+          "type": "checkbox",
+          "description": "Users can follow a specific post",
+          "label": "Follow community post",
+          "value": true
+        },
+        {
+          "identifier": "show_community_post_meta",
+          "type": "checkbox",
+          "description": "Enable a post meta data",
+          "label": "Post meta",
+          "value": true
+        },
+        {
+          "identifier": "show_community_post_sharing",
+          "type": "checkbox",
+          "description": "Show social media sharing on post",
+          "label": "Social sharing",
+          "value": false
+        },
+        {
+          "identifier": "show_community_post_vote",
+          "type": "checkbox",
+          "label": "Community post vote",
+          "description": "Enable the vote component",
+          "value": false
+        }
+      ]
+    },
+    {
+      "label": "Requests list",
+      "variables": [
+        {
+          "identifier": "request_list_beta",
+          "type": "checkbox",
+          "description": "Users can sort and filter requests, add and remove columns",
+          "label": "New request list experience",
+          "value": false
+        },
+        {
+          "identifier": "brand_color",
+          "type": "color",
+          "description": "Brand color for the requests list",
+          "label": "Brand color",
+          "value": "#FFDD00"
+        }
+      ]
+    }
+  ]
+}

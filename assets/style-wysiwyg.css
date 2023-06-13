@@ -1,0 +1,80 @@
+body {
+  --ck-color-base-border: var(--secondary-bg-color);
+  --ck-color-toolbar-border: var(--secondary-bg-color);
+  --ck-color-base-background: var(--secondary-bg-color);
+  --ck-color-toolbar-background: var(--secondary-bg-color);
+  --ck-color-text: var(--primary-text-color);
+
+  --ck-color-button-default-hover-background: var(--primary-color);
+  --ck-color-button-default-active-background: var(--primary-color-active);
+  --ck-color-button-on-background: var(--primary-color);
+  --ck-color-button-on-hover-background: var(--primary-color-hover);
+  --ck-color-button-on-active-background: var(--primary-color-active);
+  --ck-color-button-on-color: var(--primary-text-color);
+  --ck-color-split-button-hover-background: var(--primary-color-hover);
+
+  --ck-color-list-background: var(--primary-bg-color);
+  --ck-color-list-button-on-background: var(--primary-bg-color);
+  --ck-color-list-button-on-background-focus: var(--secondary-bg-color);
+  --ck-color-list-button-hover-background: var(--secondary-bg-color);
+  --ck-color-list-button-on-text: var(--primary-text-color);
+
+
+  --ck-border-radius: var(--border-radius-base);
+  --ck-focus-ring: var(--border-width) solid var(--primary-color);
+  --ck-inner-shadow: transparent;
+}
+
+[dir] .ck.ck-editor__editable_inline {
+  border-width: var(--border-width);
+}
+
+[dir] .ck.ck-button,
+[dir] .ck.ck-button:active,
+[dir] .ck.ck-button:focus,
+[dir] a.ck.ck-button,
+[dir] a.ck.ck-button:active,
+[dir] a.ck.ck-button:focus {
+  border: none;
+}
+
+[dir] .ck.ck-content p,
+[dir] .ck.ck-content h1,
+[dir] .ck.ck-content h2,
+[dir] .ck.ck-content h3,
+[dir] .ck.ck-content h4,
+[dir] .ck.ck-content a,
+[dir] .ck.ck-content ol,
+[dir] .ck.ck-content ul {
+  color: var(--form-text-color) !important;
+}
+
+[dir] .ck.ck-list__item .ck-button.ck-on:focus:not(.ck-switchbutton):not(.ck-disabled),
+[dir] .ck.ck-list__item .ck-button:hover:not(.ck-disabled) {
+  color: var(--primary-text-color);
+}
+
+[dir] .ck.ck-dropdown .ck-dropdown__arrow path,
+[dir] .ck.ck-splitbutton > .ck-splitbutton__arrow svg path {
+  fill: var(--primary-text-color);
+}
+
+[dir] .ck.ck-button:not(.ck-disabled):hover .ck.ck-icon.ck-icon_inherit-color,
+[dir] .ck.ck-button:not(.ck-disabled):hover .ck.ck-icon.ck-icon_inherit-color *,
+[dir] .ck.ck-button:not(.ck-disabled):hover,
+[dir] a.ck.ck-button:not(.ck-disabled):hover,
+[dir] .ck.ck-splitbutton.ck-splitbutton_open > .ck-button:not(.ck-on):not(.ck-disabled):not(:hover),
+[dir] .ck.ck-splitbutton:hover > .ck-button:not(.ck-on):not(.ck-disabled):not(:hover) {
+  color: var(--primary-text-color);
+}
+
+[dir] a.ck.ck-button:not(.ck-disabled):hover path:not([fill]),
+[dir] .ck.ck-button:not(.ck-disabled):hover,
+[dir] .ck.ck-button:not(.ck-disabled):hover .ck-dropdown__arrow *,
+[dir] .ck.ck-button:not(.ck-disabled):hover .ck-splitbutton__arrow *,
+[dir] .ck.ck-button.ck-on.ck-splitbutton__arrow svg *,
+[dir] .ck.ck-button.ck-on.ck-dropdown__button svg *,
+[dir] .ck.ck-splitbutton:hover > .ck-splitbutton__arrow svg path,
+[dir] .ck.ck-splitbutton > .ck-splitbutton__arrow:hover svg path {
+  color: var(--primary-text-color);
+}

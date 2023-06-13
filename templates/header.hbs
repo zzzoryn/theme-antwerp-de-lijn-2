@@ -1,0 +1,237 @@
+<div class="custom-header" data-plugin-mobile-nav data-plugin-sticky>
+  <div class="print:hidden css-175bke3">
+    <div class="ml-14 xl:ml-20 css-xfr7i3">
+      <div class="css-151i1du">
+        <svg width="292" height="336" viewBox="0 0 292 336" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="292" height="336" fill="#FFE540"></rect>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <header id="header" role="banner" data-testid="header-container" class="css-h5it6n">
+    <div class="header md:grid md:grid-cols-12 css-6mq3n9" data-testid="header">
+      <a class="inline-block w-auto " title="Go to the homepage" target="_self" href="https://www.delijn.be/en/">
+        <div class="md:pl-4 css-1asbfk1">
+          <div data-testid="menu-dl-logo" class="css-1ara1xa"></div>
+        </div>
+      </a>
+      <div class="flex items-center justify-between py-1 pr-2 w-full md:col-span-11 xl:col-start-2 xl:col-end-13">
+        <nav role="navigation" class="flex items-center justify-between flex-auto">
+          <div data-plugin-header-menu>
+            <button class="js-toggle header-mobile-ticket flex items-center md:hidden bg-primary-300 mx-2 p-2 py-1.5 rounded" aria-label="Purchase Links" aria-controls="esales-menu" aria-expanded="false" data-testid="esales-menu-button">
+              <span>{{current_locale.name}}</span>
+              <svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" class="arrow ml-2">
+                <g id="icon/chevron/down/grey" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                  <g id="icons/chevron/down/beige" transform="translate(2.000000, 4.000000)" stroke="#876C00" stroke-width="2">
+                    <g id="Group-3-Copy">
+                      <line x1="3.63797881e-12" y1="0" x2="4" y2="4" id="Path"></line>
+                      <line x1="3.53553391" y1="0" x2="7.60660172" y2="4" id="Path" transform="translate(6.035534, 2.000000) scale(-1, 1) translate(-6.035534, -2.000000) "></line>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </button>
+            <ul id="esales-menu" class="js-menu absolute mt-1 bg-primary-300 ml-2 rounded" data-testid="esales-menu-items">
+              {{#each alternative_locales}}
+                <li class="py-2 pl-3 pr-4 border-t border-brand-yellow first:border-t-0">
+                  <a title="Tickets" href="{{url}}"><span data-testid="typography-body" class="text-base css-1mrdp1z"> {{name}}</span></a>
+                </li>
+              {{/each}}
+            </ul>
+          </div>
+          <div class="overflow-y-auto flex-col fixed bottom-0 left-0 right-0 ml-0 flex justify-start items-start bg-brand-yellow top-[56px] duration-500 transition-all md:ml-6 lg:ml-0 md:flex-col md:flex-auto md:h-auto md:static md:bg-transparent md:visible h-0 invisible js-mobile-menu">
+            <div class="header-mobile-bg absolute z-0 top-0 left-0 md:hidden hidden">
+              <svg width="64" height="282" viewBox="0 0 64 282" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0)">
+                  <rect width="64" height="338" transform="translate(0 -56)" fill="white"></rect>
+                  <path d="M-1 0H375V614H-1V0Z" fill="#FFDD00"></path>
+                  <path d="M0 -56H64L0 282V-1V-56Z" fill="white"></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0">
+                    <rect width="64" height="338" fill="white" transform="translate(0 -56)"></rect>
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+            <div class="z-10 w-full css-kyakgh" data-testid="header-menu">
+              <a class="mr-4 lg:mr-6 css-hr6e03" data-testid="menu-Home" href="https://www.delijn.be/en/">Home</a>
+              <span class="css-1dftzi6"></span>
+              <a class=" mr-4 lg:mr-6 css-hr6e03" data-testid="menu-routePlanner" href="https://www.delijn.be/en/routeplanner/">Route
+                planner</a>
+              <a class=" mr-4 lg:mr-6 css-hr6e03" data-testid="menu-stops" href="https://www.delijn.be/en/haltes/">Stops</a>
+              <a class=" mr-4 lg:mr-6 css-hr6e03" data-testid="menu-lines" href="https://www.delijn.be/en/lijnen/">Lines</a>
+              <span class="css-1dftzi6 menu-item-md"></span>
+              <a class=" mr-4 lg:mr-6 css-hr6e03 menu-item-md" data-testid="menu-tickets" href="https://www.delijn.be/en/tickets/">Tickets</a>
+              <a class=" mr-4 lg:mr-6 css-hr6e03 menu-item-md" data-testid="menu-subscriptions" href="https://www.delijn.be/en/content/abonnementen/">Travel
+                Passes</a>
+              <span class="css-1dftzi6 menu-item-lg"></span>
+              <a class=" mr-4 lg:mr-6 css-hr6e03 menu-item-lg" data-testid="menu-jobs" href="https://jobs.delijn.be/">Jobs</a>
+              <span class="css-1dftzi6 menu-item-lg"></span>
+              <a class="is-active mr-4 lg:mr-6 css-hr6e03 menu-item-lg" data-testid="menu-helpAndContact" href="https://help.delijn.be/hc">Help
+                &amp; Contact</a>
+              <a class=" mr-4 lg:mr-6 css-hr6e03 menu-item-mobile" href="https://www.delijn.be/en/content/over-de-lijn/">About
+                De Lijn</a>
+              <a class=" mr-4 lg:mr-6 css-hr6e03 menu-item-mobile" href="https://www.delijn.be/en/content/zakelijk/">Businesses</a>
+              <a class=" mr-4 lg:mr-6 css-hr6e03 menu-item-mobile" href="https://www.delijn.be/en/content/oplossingen-voor-reizigers/">Solutions
+                for travelers</a>
+
+              <div data-plugin-header-menu='{"activeButtonText": "Less"}'>
+                <button class="css-1f3hhtl js-toggle">
+                  <div class="mr-2 js-button-text">More</div>
+                  <svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" class=" undefined">
+                    <g id="icon/chevron/down/grey" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                      <g id="icons/chevron/down/beige" transform="translate(2.000000, 4.000000)" stroke="#876C00" stroke-width="2">
+                        <g id="Group-3-Copy">
+                          <line x1="3.63797881e-12" y1="0" x2="4" y2="4" id="Path"></line>
+                          <line x1="3.53553391" y1="0" x2="7.60660172" y2="4" id="Path" transform="translate(6.035534, 2.000000) scale(-1, 1) translate(-6.035534, -2.000000) "></line>
+                        </g>
+                      </g>
+                    </g>
+                  </svg>
+                </button>
+                <div class="m-0 md:p-6 css-76jrna js-menu" data-testid="header-more-menu">
+                  <div class="flex flex-auto justify-between flex-row">
+                    <div class="md:grid md:gap-6 md:grid-cols-3 w-full css-1qou5tf">
+                      <div class="col-start-1">
+                        <a class="mb-4 block" href="https://www.delijn.be/en/content/over-de-lijn/"><span data-testid="typography-bodyMedium" class="text-base font-medium css-1mrdp1z">About De Lijn</span></a>
+                        <div class="flex flex-col h-0 md:h-full invisible md:visible">
+                          <a class="inline-block  w-full" target="_self" href="https://www.delijn.be/en/content/toekomst-waarden/"><span data-testid="link-futur-and-values" class="mb-1"><span data-testid="typography-bodySmall" class="text-sm css-1mrdp1z">Future and values</span></span></a><a class="inline-block  w-full" target="_self" href="https://www.delijn.be/en/content/over-de-lijn/organisatie/"><span data-testid="link-organistaion" class="mb-1"><span data-testid="typography-bodySmall" class="text-sm css-1mrdp1z">Organisation</span></span></a><a class="inline-block  w-full" target="_self" href="https://www.delijn.be/en/content/over-de-lijn/projecten/"><span data-testid="link-projects" class="mb-1"><span data-testid="typography-bodySmall" class="text-sm css-1mrdp1z">Projects</span></span></a><a class="inline-block  w-full" target="_self" href="https://www.delijn.be/en/content/pers/"><span data-testid="link-press" class="mb-1"><span data-testid="typography-bodySmall" class="text-sm css-1mrdp1z">Press</span></span></a><a class="inline-block  w-full" target="_self" href="https://www.delijn.be/en/content/over-de-lijn/campagnes-en-acties/"><span data-testid="link-campaigns-and-actions" class="mb-1"><span data-testid="typography-bodySmall" class="text-sm css-1mrdp1z">Campaigns and promotions</span></span></a>
+                        </div>
+                      </div>
+                      <div class="col-start-2">
+                        <a class="mb-4 block" href="https://www.delijn.be/en/content/zakelijk/"><span data-testid="typography-bodyMedium" class="text-base font-medium css-1mrdp1z">Businesses</span><span class="css-1hvwhxp"></span></a>
+                        <div class="flex flex-col h-0 md:h-full invisible md:visible">
+                          <a class="inline-block  w-full" target="_self" href="https://www.delijn.be/en/content/zakelijk/voordelig-woon-werkverkeer/"><span data-testid="link-affordable-transport-for-your-employees" class="mb-1"><span data-testid="typography-bodySmall" class="text-sm css-1mrdp1z">Cheaper commuting for your workforce</span></span></a><a class="inline-block  w-full" target="_self" href="https://www.delijn.be/en/content/zakelijk/scholen/"><span data-testid="link-affordable-transport-for-your-student" class="mb-1"><span data-testid="typography-bodySmall" class="text-sm css-1mrdp1z">Inexpensive transport for all your students</span></span></a><a class="inline-block  w-full" target="_self" href="https://www.delijn.be/en/content/zakelijk/vervoer-naar-je-event/"><span data-testid="link-transport-to-your-event" class="mb-1"><span data-testid="typography-bodySmall" class="text-sm css-1mrdp1z">Transport to your event</span></span></a><a class="inline-block  w-full" target="_self" href="https://www.delijn.be/en/content/zakelijk/lokale-besturen/"><span data-testid="link-local-governments" class="mb-1"><span data-testid="typography-bodySmall" class="text-sm css-1mrdp1z">Local authorities</span></span></a><a class="inline-block  w-full" target="_self" href="https://www.delijn.be/en/content/zakelijk/ict-ontwikkelaars/"><span data-testid="link-ict-and-developers" class="mb-1"><span data-testid="typography-bodySmall" class="text-sm css-1mrdp1z">IT professionals and developers</span></span></a>
+                        </div>
+                      </div>
+                      <div class="col-start-1">
+                        <a class="mb-4 block" href="https://www.delijn.be/en/content/oplossingen-voor-reizigers/"><span data-testid="typography-bodyMedium" class="text-base font-medium css-1mrdp1z">Solutions for travelers</span></a>
+                        <div class="flex flex-col h-0 md:h-full invisible md:visible">
+                          <a class="inline-block  w-full" target="_self" href="https://www.delijn.be/en/content/oplossingen-voor-reizigers/jongeren/"><span data-testid="link-young-people" class="mb-1"><span data-testid="typography-bodySmall" class="text-sm css-1mrdp1z">Young people</span></span></a><a class="inline-block  w-full" target="_self" href="https://www.delijn.be/en/content/oplossingen-voor-reizigers/senioren/"><span data-testid="link-seniors" class="mb-1"><span data-testid="typography-bodySmall" class="text-sm css-1mrdp1z">Seniors (65+)</span></span></a><a class="inline-block  w-full" target="_self" href="https://www.delijn.be/en/content/oplossingen-voor-reizigers/pendelaars/"><span data-testid="link-commuter" class="mb-1"><span data-testid="typography-bodySmall" class="text-sm css-1mrdp1z">Commuters</span></span></a><a class="inline-block  w-full" target="_self" href="https://www.delijn.be/en/content/oplossingen-voor-reizigers/groepen-en-jeugdbewegingen/"><span data-testid="link-groups-and-youth-movements" class="mb-1"><span data-testid="typography-bodySmall" class="text-sm css-1mrdp1z">Groups and youth clubs</span></span></a><a class="inline-block  w-full" target="_self" href="https://www.delijn.be/en/content/oplossingen-voor-reizigers/dagjes-toeristen/"><span data-testid="link-day-tourists" class="mb-1"><span data-testid="typography-bodySmall" class="text-sm css-1mrdp1z">Tourists and day-trippers</span></span></a><a class="inline-block  w-full" target="_self" href="https://www.delijn.be/en/content/oplossingen-voor-reizigers/personen-met-beperking-of-begeleider/"><span data-testid="link-persons-with-disabilities-or-accompanying-persons" class="mb-1"><span data-testid="typography-bodySmall" class="text-sm css-1mrdp1z">People with a disability or accompanying person</span></span></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center justify-end flex-auto" data-testid="actions">
+            <div class="flex md:hidden items-center">
+              <a class="ml-6 js-search">
+                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15.5 9.92383C15.5 13.5137 12.5899 16.4238 9 16.4238C5.41015 16.4238 2.5 13.5137 2.5 9.92383C2.5 6.33398 5.41015 3.42383 9 3.42383C12.5899 3.42383 15.5 6.33398 15.5 9.92383Z" stroke="#876C00" stroke-width="3"></path>
+                  <rect x="14.8284" y="12.9238" width="12" height="4" rx="2" transform="rotate(45 14.8284 12.9238)" fill="#876C00"></rect>
+                </svg>
+              </a>
+              {{#if settings.show_signin}}
+                {{#if signed_in}}
+                  {{#link "requests" class="ml-6"}}
+                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 5.569a4.646 4.646 0 0 0 0 9.29 4.646 4.646 0 0 0 0-9.29Zm0 6.968a2.323 2.323 0 1 1 .001-4.647A2.323 2.323 0 0 1 12 12.537ZM12 .924c-6.629 0-12 5.37-12 12 0 6.629 5.371 12 12 12s12-5.371 12-12c0-6.63-5.371-12-12-12ZM12 22.6a9.622 9.622 0 0 1-6.295-2.342 4.169 4.169 0 0 1 3.368-1.911c1.006.31 1.964.465 2.927.465.963 0 1.921-.15 2.927-.465a4.181 4.181 0 0 1 3.368 1.911A9.622 9.622 0 0 1 12 22.601Zm7.873-4.07c-1.181-1.518-3.005-2.51-5.086-2.51-.494 0-1.258.464-2.787.464-1.524 0-2.294-.464-2.787-.464-2.076 0-3.9.991-5.086 2.51a9.608 9.608 0 0 1-1.804-5.607c0-5.337 4.34-9.678 9.677-9.678s9.677 4.34 9.677 9.678a9.61 9.61 0 0 1-1.804 5.608Z" fill="#876C00"></path>
+                    </svg>
+                  {{/link}}
+                {{else}}
+                  {{#link "sign_in" class="ml-6"}}
+                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 5.569a4.646 4.646 0 0 0 0 9.29 4.646 4.646 0 0 0 0-9.29Zm0 6.968a2.323 2.323 0 1 1 .001-4.647A2.323 2.323 0 0 1 12 12.537ZM12 .924c-6.629 0-12 5.37-12 12 0 6.629 5.371 12 12 12s12-5.371 12-12c0-6.63-5.371-12-12-12ZM12 22.6a9.622 9.622 0 0 1-6.295-2.342 4.169 4.169 0 0 1 3.368-1.911c1.006.31 1.964.465 2.927.465.963 0 1.921-.15 2.927-.465a4.181 4.181 0 0 1 3.368 1.911A9.622 9.622 0 0 1 12 22.601Zm7.873-4.07c-1.181-1.518-3.005-2.51-5.086-2.51-.494 0-1.258.464-2.787.464-1.524 0-2.294-.464-2.787-.464-2.076 0-3.9.991-5.086 2.51a9.608 9.608 0 0 1-1.804-5.607c0-5.337 4.34-9.678 9.677-9.678s9.677 4.34 9.677 9.678a9.61 9.61 0 0 1-1.804 5.608Z" fill="#876C00"></path>
+                    </svg>
+                  {{/link}}
+                {{/if}}
+              {{/if}}
+              <button aria-expanded="false" aria-label="Show menu" aria-controls="mobile-navigation" class="md:hidden p-2 ml-4 js-mobile-toggle" type="button" data-testid="button-mobile-menu">
+                <svg class="icon-burger" width="25" height="18" viewBox="0 0 25 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="0.989258" width="24" height="4" rx="2" fill="#876C00"></rect>
+                  <rect x="0.989258" y="7" width="24" height="4" rx="2" fill="#876C00"></rect>
+                  <rect x="0.989258" y="14" width="24" height="4" rx="2" fill="#876C00"></rect>
+                </svg>
+                <svg class="icon-close" width="24" height="24" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" data-testid="icon-close">
+                  <g id="Type=Close">
+                    <g id="Group 13">
+                      <rect id="Rectangle" x="12.2427" y="2.34315" width="2" height="14" rx="1" transform="rotate(45 12.2427 2.34315)" fill="#876C00"></rect>
+                      <rect id="Rectangle_2" width="2" height="14" rx="1" transform="matrix(-0.707107 0.707107 0.707107 0.707107 3.75732 2.34315)" fill="#876C00"></rect>
+                    </g>
+                  </g>
+                </svg>
+              </button>
+            </div>
+            <a class="hidden sm:flex js-search"><span class="css-gr00v8"><svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 9.92383C15.5 13.5137 12.5899 16.4238 9 16.4238C5.41015 16.4238 2.5 13.5137 2.5 9.92383C2.5 6.33398 5.41015 3.42383 9 3.42383C12.5899 3.42383 15.5 6.33398 15.5 9.92383Z" stroke="#876C00" stroke-width="3"></path><rect x="14.8284" y="12.9238" width="12" height="4" rx="2" transform="rotate(45 14.8284 12.9238)" fill="#876C00"></rect></svg></span></a>
+            {{#if alternative_locales}}
+              <div class="ml-4 xl:ml-6 hidden md:flex">
+                <div class=" css-1y9bzg2-container" data-plugin-header-menu>
+                  <span id="react-select-desktop-language-switcher-live-region" class="css-7pg0cj-a11yText"></span><span aria-live="polite" aria-atomic="false" aria-relevant="additions text" class="css-7pg0cj-a11yText"></span>
+                  <div class="css-sv3bka-control js-toggle">
+                    <div class=" css-jhlrbn">
+                      <div class=" css-12ve98a-singleValue">{{current_locale.name}}</div>
+                    </div>
+                    <div class=" css-1wy0on6">
+                      <div class=" css-2bss5l-indicatorContainer" aria-hidden="true">
+                        <svg height="20" width="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false" class="css-8mmkcg">
+                          <path d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="css-12vzxnf-menu js-menu">
+                    <div class=" css-m6trsu">
+                      {{#each alternative_locales}}
+                        <a href="{{url}}" dir="{{direction}}" class="css-1vzos2d-option">
+                          {{name}}
+                        </a>
+                      {{/each}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {{/if}}
+            {{#if settings.show_signin}}
+              {{#if signed_in}}
+                <div class="ml-4 xl:ml-6 hidden md:flex">
+                  <div class=" css-1y9bzg2-container" data-plugin-header-menu>
+                    <span id="react-select-desktop-language-switcher-live-region" class="css-7pg0cj-a11yText"></span><span aria-live="polite" aria-atomic="false" aria-relevant="additions text" class="css-7pg0cj-a11yText"></span>
+                    <div class="css-sv3bka-control js-toggle">
+                      <div class=" css-jhlrbn">
+                        <div class="css-12ve98a-singleValue d-flex">
+                          <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5.569a4.646 4.646 0 0 0 0 9.29 4.646 4.646 0 0 0 0-9.29Zm0 6.968a2.323 2.323 0 1 1 .001-4.647A2.323 2.323 0 0 1 12 12.537ZM12 .924c-6.629 0-12 5.37-12 12 0 6.629 5.371 12 12 12s12-5.371 12-12c0-6.63-5.371-12-12-12ZM12 22.6a9.622 9.622 0 0 1-6.295-2.342 4.169 4.169 0 0 1 3.368-1.911c1.006.31 1.964.465 2.927.465.963 0 1.921-.15 2.927-.465a4.181 4.181 0 0 1 3.368 1.911A9.622 9.622 0 0 1 12 22.601Zm7.873-4.07c-1.181-1.518-3.005-2.51-5.086-2.51-.494 0-1.258.464-2.787.464-1.524 0-2.294-.464-2.787-.464-2.076 0-3.9.991-5.086 2.51a9.608 9.608 0 0 1-1.804-5.607c0-5.337 4.34-9.678 9.677-9.678s9.677 4.34 9.677 9.678a9.61 9.61 0 0 1-1.804 5.608Z" fill="#876C00"></path>
+                          </svg>
+                          <span class="ml-2">{{t 'profile'}}</span>
+                        </div>
+                      </div>
+                      <div class=" css-1wy0on6">
+                        <div class=" css-2bss5l-indicatorContainer" aria-hidden="true">
+                          <svg height="20" width="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false" class="css-8mmkcg">
+                            <path d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="css-12vzxnf-menu js-menu">
+                      <div class=" css-m6trsu">
+                        {{#my_profile class="css-1vzos2d-option" role="menuitem"}}{{t 'profile'}}{{/my_profile}}
+                        {{link "requests" class="css-1vzos2d-option" role="menuitem"}}
+                        {{#link "contributions" class="css-1vzos2d-option" role="menuitem"}}{{t "activities"}}{{/link}}
+                        {{contact_details class="css-1vzos2d-option" role="menuitem"}}
+                        {{change_password class="css-1vzos2d-option" role="menuitem"}}
+                        {{link "sign_out" class="css-1vzos2d-option" role="menuitem"}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {{else}}
+                {{#link "sign_in" class="ml-4 xl:ml-6 css-1n13j5h"}}
+                  <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 5.569a4.646 4.646 0 0 0 0 9.29 4.646 4.646 0 0 0 0-9.29Zm0 6.968a2.323 2.323 0 1 1 .001-4.647A2.323 2.323 0 0 1 12 12.537ZM12 .924c-6.629 0-12 5.37-12 12 0 6.629 5.371 12 12 12s12-5.371 12-12c0-6.63-5.371-12-12-12ZM12 22.6a9.622 9.622 0 0 1-6.295-2.342 4.169 4.169 0 0 1 3.368-1.911c1.006.31 1.964.465 2.927.465.963 0 1.921-.15 2.927-.465a4.181 4.181 0 0 1 3.368 1.911A9.622 9.622 0 0 1 12 22.601Zm7.873-4.07c-1.181-1.518-3.005-2.51-5.086-2.51-.494 0-1.258.464-2.787.464-1.524 0-2.294-.464-2.787-.464-2.076 0-3.9.991-5.086 2.51a9.608 9.608 0 0 1-1.804-5.607c0-5.337 4.34-9.678 9.677-9.678s9.677 4.34 9.677 9.678a9.61 9.61 0 0 1-1.804 5.608Z" fill="#876C00"></path>
+                  </svg>
+                  <span data-testid="typography-bodyMedium" class="text-base font-medium md:hidden lg:block css-1mrdp1z">{{t 'sign_in'}}</span>
+                {{/link}}
+              {{/if}}
+            {{/if}}
+          </div>
+        </nav>
+      </div>
+      <div class="Toastify" id="app"></div>
+    </div>
+  </header>
+</div>
